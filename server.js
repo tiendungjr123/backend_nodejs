@@ -1,5 +1,5 @@
 const http = require("http");
-const hostname = "127.0.0.1"; //cái này === http://localhost
+const hostname = "localhost"; //cái này === http://localhost
 const port = 3000;
 //Create HTTP server and listen on port 3000 for requests
 const server = http.createServer((req, res) => {
