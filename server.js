@@ -12,7 +12,3 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-//tự động chạy trên localhost
-// server.listen(port, () => {
-//     console.log(`Server running at http://${hostname}:${port}/`);
-// });
