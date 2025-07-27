@@ -7,12 +7,27 @@ const getAbc = (req, res) => {
   res.render('sample.ejs')
 }
 
-const postCreateUser = (req, res) => {
-  console.log(req.body)
-  res.send("create new user")
+const postCreateUser = async (req, res) => {
+  let email = req.body.email;
+  let name = req.body.name;
+  let city = req.body.city;
+
+  // let {email,name,city} = req.body;
+
+  let [results, fields] = await connection.query(
+    ` INSERT INTO Users(email,name,city)
+      VALUES (?,?,?)`, [email, name, city],)
+
+  console.log(results)
+  res.send('create user succeed!')
+}
+
+const getCreatePage = (req, res) => {
+  res.render('create.ejs')
 }
 module.exports = {
   getHomepage,
   getAbc,
-  postCreateUser
+  postCreateUser,
+  getCreatePage
 }
