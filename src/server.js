@@ -1,7 +1,6 @@
 require('dotenv').config() // Import the express module
 const express = require('express')
 const app = express()
-const connection = require('./config/database');
 const port = process.env.PORT || 3000// initialize the port number
 const hostname = process.env.HOST_NAME // initialize the hostname
 // config req.body
